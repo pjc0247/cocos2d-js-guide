@@ -28,6 +28,27 @@ var MyScene = cc.Scene.extend({
 });
 cc.director.runScene(new MyScene());
 ```
+__씬에서만 사용할 변수 만들기__<br>
+씬 내부적으로 사용할 변수를 지정하기 위해서는 아래와 같이 코드를 작성합니다. 주의해야 할 점은 `=` 를 사용해서 초기화하는것이 아닌 `:`를 사용해서 값을 초기화합니다. 또한 변수 뒤에 이어지는 변수가 있을 경우 반드시 콤마(`,`)를 적어주세요.
+```js
+var MyScene = cc.Scene.extend({
+  playerLevel : 10,
+  money : 99999
+  
+  /* ... */
+});
+```
+__전역 변수 만들기__<br>
+씬 밖의 영역에 변수를 선언하면 자동으로 전역 변수로 동작합니다.<br>
+이렇게 전역 변수로 만들어진 값은 씬 간에 공유될 수 있습니다. 
+```js
+var globalVariable = "Hi";
+
+var MyScene = cc.Scene.extend({
+  /* ... */
+});
+```
+
 <br>
 이미지 출력하기
 ----
@@ -127,7 +148,7 @@ sprite.runAction(
   3 /* 3번 반복하라고 지정합니다 */ ));
 ```
 __딜레이 주기__<br>
-몇 초 후에 애니메이션을 실행하고 싶다면 `DelayTime`을 사용합니다. `DelayTime`은 거의 모든 경우에 `Sequence`와 혼합하여 사용해야 합니다.<br>
+몇 초 후에 애니메이션을 실행하고 싶다면 `DelayTime`을 사용합니다. `DelayTime`은 거의 모든 경우에 `Sequence`와 혼합하여 사용 합니다.<br>
 `DelayTime`에는 얼마나 멈출지를 __초__ 단위로 지정합니다.
 ```js
 // 1초 딜레이 하고
