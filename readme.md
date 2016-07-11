@@ -128,7 +128,7 @@ sprite.runAction(
 ```
 __딜레이 주기__<br>
 몇 초 후에 애니메이션을 실행하고 싶다면 `DelayTime`을 사용합니다. `DelayTime`은 거의 모든 경우에 `Sequence`와 혼합하여 사용해야 합니다.<br>
-`DelayTime`에는 얼마나 멈출지를 `초` 단위로 지정합니다.
+`DelayTime`에는 얼마나 멈출지를 __초__ 단위로 지정합니다.
 ```js
 // 1초 딜레이 하고
 // `ScaleTo` 를 순차적으로 실행합니다.
