@@ -106,3 +106,23 @@ sprite.runAction(
     cc.ScaleTo.create(0.5, 1)
   ));
 ```
+__애니메이션 반복하기__<br>
+만약 애니메이션을 무한반복 시키고 싶다면 `RepeatForever` 를 사용합니다. 아래 예제는 이미지를 커졌다 작아졌다가 무한 반복되도록 합니다.
+```js
+sprite.runAction(
+  cc.RepeatForever.create(
+    cc.Sequence.create(
+      cc.ScaleTo.create(0.5, 2),
+      cc.ScaleTo.create(0.5, 1)
+  )));
+```
+무한정 반복이 아니고 지정된 숫자만큼 반복하려면 `Repeat`을 사용합니다.
+```js
+sprite.runAction(
+  cc.Repeat.create(
+    cc.Sequence.create(
+      cc.ScaleTo.create(0.5, 2),
+      cc.ScaleTo.create(0.5, 1)
+  ),
+  3 /* 3번 반복하라고 지정합니다 */ ));
+```
