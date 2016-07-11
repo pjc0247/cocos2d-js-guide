@@ -97,10 +97,12 @@ sprite.runAction(
 ```
 __순차적 애니메이션 실행하기__<br>
 경우에 따라서는 여러개의 애니메이션을 조합해야 할 경우가 있습니다. `Sequence` 를 이용하면 두개 이상의 애니메이션을 순차실행시킬 수 있습니다.
+![bird](sequence.gif)<br>
 ```js
+// 이미지를 2배 커지게 한다음 원래 크기로 돌아옵니다.
 sprite.runAction(
   cc.Sequence.create(
     cc.ScaleTo.create(0.5, 2),
-    cc.ScaleTo.create(0.5, 2)
+    cc.ScaleTo.create(0.5, 1)
   ));
 ```
