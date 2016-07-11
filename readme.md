@@ -189,3 +189,18 @@ child.setPosition(0, 0);
 sprite.addChild(child, 0);
 ```
 __TODO__ : 자식 노드를 추가한 상태에서, `sprite`와 `child`를 각각 움직여 보세요. (setPosition 또는 MoveBy이용)
+<br>
+__하이라키 시스템에 영향을 받는 것들__<br>
+아래 프로퍼티들은 부모 노드의 속성이 변경되면 자식 노드에게도 속성 변경이 영향일 끼치는 항목들입니다.<br>
+* 투명도 (setOpacity)
+* 스케일 (setScale)
+* z 순서
+* 색상 (setColor)
+<br>
+__TODO__ : 위의 `sprite, child` 예제에서 위 속성들을 각각 변경시켜 보세요. (몇명 항목들은 성능 최적화를 위해 기본적으로 cascading이 disable 되어 있습니다. 아래 코드를 참조하세요.)
+```js
+// 부모 노트의 투명도가 자식 노드에게도 영향을 미치도록 합니다.
+sprite.setCascadeOpacityEnabled(true);
+// 부모 노드의 색상이 자식 노드에게도 영향을 미치도록 합니다.
+sprite.setCascadeColorEnabled(true);
+```
