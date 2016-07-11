@@ -172,8 +172,12 @@ sprite.runAction(
 ----
 `cocos2d`는 하이라키(hierarchy) 시스템을 가지고 있습니다. 이는 대부분의 게임 엔진이 기본적으로 지원하는 항목이며 여러개의 연관성 있는 게임 오브젝트들을 하나로 묶어서 손쉽게 관리할 수 있도록 해 줍니다.<br>
 ![hr](http://wizardfu.com/assets/book/cocos2d-x/SpriteDraggerX-Hierarchy.png)<br>
+기본적으로 `cocos2d`에서 눈에 보여지는 모든 오브젝트들은 __Node__로 취급됩니다. __Node__는 게임 오브젝트를 구성하는 기본 단위이며, 노드들이 모여서 하나의 게임 오브젝트를 구성할수도 / 하나의 노드가 하나의 게임 오브젝트를 나타낼 수도 있습니다.<br>
+위의 그림에서 `Scene`, `Sprite`, `Layer`는 모두 노드이며, `Scene`같은 경우는 보통 최상위 노드를 나타냅니다.
 <br>
 __자식 노드 추가하기__<br>
+자식 노드를 추가하면 부모 노드를 이동시킬 때 자식 노드도 함께 움직이게 됩니다. 게임 캐릭터 위의 HP 게이지를 상상해보세요. 체력바는 게임 캐릭터가 움직일때마다 계속 머리위에 따라다녀야 하지만, 이를 하이라키 구조 없이 구현하고자 하면 캐릭터가 움직일 때 마다 수동으로 일일히 체력바의 위치도 변경해주어야 할 것입니다.<br>
+![hpbar](http://media.tumblr.com/tumblr_mcpcf4GeEf1qaycbp.jpg)<br>
 ```js
 var sprite = cc.Sprite.create("image.png");
 sprite.setPosition(200, 200);
