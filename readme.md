@@ -189,7 +189,7 @@ child.setPosition(0, 0);
 sprite.addChild(child, 0);
 ```
 __TODO__ : 자식 노드를 추가한 상태에서, `sprite`와 `child`를 각각 움직여 보세요. (setPosition 또는 MoveBy이용)
-<br>
+<br><br>
 __하이라키 시스템에 영향을 받는 것들__<br>
 아래 프로퍼티들은 부모 노드의 속성이 변경되면 자식 노드에게도 속성 변경이 영향일 끼치는 항목들입니다.<br>
 * 투명도 (setOpacity)
