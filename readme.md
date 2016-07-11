@@ -171,8 +171,16 @@ sprite.runAction(
 하이라키 시스템
 ----
 `cocos2d`는 하이라키(hierarchy) 시스템을 가지고 있습니다. 이는 대부분의 게임 엔진이 기본적으로 지원하는 항목이며 여러개의 연관성 있는 게임 오브젝트들을 하나로 묶어서 손쉽게 관리할 수 있도록 해 줍니다.<br>
+![hr](http://wizardfu.com/assets/book/cocos2d-x/SpriteDraggerX-Hierarchy.png)<br>
 <br>
 __자식 노드 추가하기__<br>
 ```js
+var sprite = cc.Sprite.create("image.png");
+sprite.setPosition(200, 200);
+this.addChild(sprite, 0);
 
+var child = cc.Sprite.create("child.png");
+child.setPosition(0, 0);
+sprite.addChild(child, 0);
 ```
+__TODO__ : 자식 노드를 추가한 상태에서, `sprite`와 `child`를 각각 움직여 보세요. (setPosition 또는 MoveBy이용)
