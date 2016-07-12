@@ -24,6 +24,7 @@ HTML5게임의 한계
 * 만약 문자열과 숫자를 합치고 싶다면 단순히 `+` 기호를 사용합니다. (예 : `"PlayerName : " + name`)
 추가적인 내용은 [자바스크립트 기초] 페이지를 봐 주세요.(javascript_basic.md)<br>
 <br>
+
 Scene
 ----
 ![s](http://www.cocos2d-x.org/attachments/1591/scenes650x144.png)<br>
