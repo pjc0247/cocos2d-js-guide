@@ -378,3 +378,5 @@ window.onload = function(){
 };
 </script>
 ```
+위 코드대로라면 `loading_scene` -> `game_scene` -> `코드 직접 삽입` 순으로 스크립트가 로드됩니다.<br>
+이 순서는 매우 중요한데, 3번째 `script`에서 __LoadingScene__을 사용하기 때문에 3번째 스크립트는 반드시 `loading_scene`이 불려진 이후에 실행되어야 하기 때문입니다. 만약 `loading_scene`을 불러오는 `script`를 가장 아래로 내려버리면 에러가 발생하게 될 것입니다.
