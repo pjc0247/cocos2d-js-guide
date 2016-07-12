@@ -289,3 +289,32 @@ this.label.setString("Score : " + score);
 스케쥴러 사용하기
 ----
 ![batzul](batzul.png)<br>
+<br>
+__딱 한번 스케쥴하기__
+```js
+// 3초 뒤에 실행시킵니다.
+this.scheduleOnce(function() {
+  // 이 코드 블럭은 3초 뒤 실행됩니다.
+  console.log("Hello World");
+}, 3);
+```
+__반복적으로 스케쥴하기__<br>
+만약 한번이 아닌 계속적으로 스케쥴하고싶다면 `schedule`을 사용합니다.
+```js
+this.schedule(function() {
+  // 이 코드 블럭은 3초 마다 실행됩니다.
+  console.log("Hello World");
+}, 3);
+```
+__스케쥴한 작업 멈추기__
+```js
+// 나중에 멈출 필요가 있다면
+// 스케쥴할 때 이름을 넣고서 생성합니다.
+this.schedule(function() {
+}, 3, "TASK_NAME_HERE");
+
+/* ... */
+
+// 이전에 지정한 이름으로 스케쥴을 멈출 수 있습니다.
+this.unschedule("TASK_NAME_HERE");
+```
