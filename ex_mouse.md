@@ -1,6 +1,6 @@
 ex_mouse_move
 ====
-![ex_mouse](ex_mouse.gif)<br>
+![ex_mouse](ex_mouse_move.gif)<br>
 마우스 클릭을 이용하여 캐릭터를 움직이는 예제입니다.
 <br><br>
 ```js
