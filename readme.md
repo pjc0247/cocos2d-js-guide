@@ -258,7 +258,7 @@ sprite.setCascadeColorEnabled(true);
 
 폰트 출력하기
 ----
-![font](font.png)
+![font](font.png)<br>
 `cc.LabelTTF`를 이용하면 텍스트를 출력하는 라벨을 만들 수 있습니다.
 ```js
 label = cc.LabelTTF.create("SomeText");
