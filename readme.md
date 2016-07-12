@@ -184,6 +184,38 @@ __각 이벤트 별 사용 예시__
 * __Move__ : 드래그 효과를 만들 때
 * __Up__ : 버튼의 클릭 / 타이쿤 게임 등에서 건물을 배치시킬 때 (신중함을 요구하는 일은 Up에서 처리합니다. 만약 건물을 배치시킨다고 할 때 Down에서 처리할 경우 사용자가 실수로 눌럿을 때도 건물이 바로 배치되기 때문에 불편할 수 있습니다. 반면에 Up에서 처리할 경우 잘못 누른 경우에도 드래그로 다시한번 위치를 정정할 기회를 주는것이 가능합니다.)
 <br>
+```js
+var MyScene = cc.Scene.extend({
+  onEnter:function() {
+    this._super();
+    
+    // 마우스 이벤트가 발생하면 실행될 메소드들을 지정합니다.
+    //   이렇게 특정 상황에 실행되는 메소드를 콜백(callback)이라고 합니다.
+    cc.eventManager.addListener({
+      event: cc.EventListener.MOUSE,
+      onMouseDown : this.onMouseDown,
+      onMouseUp : this.onMouseUp,
+      onMouseMove : this.onMouseMove
+    },this);
+  },
+  
+  onMouseDown:function(e) {
+    // 마우스가 눌리면 이곳이 실행됩니다.
+  },
+  onMouseUp:function(e) {
+    // 마우스게 떼지면 이곳이 실행됩니다.
+  },
+  onMouseMove:function(e) {
+    // 마우스가 움직이면 이곳이 실행됩니다.
+    
+    // 이렇게 해서 마우스 좌표를 가져올 수 있습니다.
+    var loc = e.getLocation();
+    var x = loc.x;
+    var y = loc.y;
+  }
+});
+```
+<br>
 
 하이라키 시스템
 ----
@@ -222,6 +254,7 @@ sprite.setCascadeOpacityEnabled(true);
 // 부모 노드의 색상이 자식 노드에게도 영향을 미치도록 합니다.
 sprite.setCascadeColorEnabled(true);
 ```
+<br>
 
 폰트 출력하기
 ----
