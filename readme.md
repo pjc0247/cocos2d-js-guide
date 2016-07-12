@@ -221,6 +221,8 @@ var MyScene = cc.Scene.extend({
 });
 ```
 <br>
+__예제__ : [마우스 클릭 예제](ex_mouse_move.md)<br>
+<br>
 
 하이라키 시스템
 ----
