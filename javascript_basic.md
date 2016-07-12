@@ -41,3 +41,13 @@ console.log(ary); // [3, 4]
 // 예를들어 0.123123, 0.5523 같은...
 console.log(Math.random());
 ```
+`x ~ y` 사이의 랜덤값을 생성하고 싶으면 아래와 같이 함수를 작성합니다.
+```js
+// x이상 y미만의 랜덤값을 반환합니다.
+function rand(x, y) {
+  return Math.floor(Math.random() * (y-x)) + x;
+}
+
+console.log(rand(0, 10)); // 0 ~ 9 사이의 숫자
+```
+<br>
