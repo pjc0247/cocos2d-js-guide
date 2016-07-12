@@ -224,6 +224,36 @@ var MyScene = cc.Scene.extend({
 __예제__ : [마우스 클릭 예제](ex_mouse.md)<br>
 <br>
 
+폰트 출력하기
+----
+![font](font.png)<br>
+`cc.LabelTTF`를 이용하면 텍스트를 출력하는 라벨을 만들 수 있습니다.
+```js
+label = cc.LabelTTF.create("SomeText");
+label.setPosition(200, 200);
+this.addChild(label);
+```
+<br>
+__색상 변경하기__<br>
+라벨을 처음 만들면 경우에 따라 보이지 않는 경우가 있습니다. 이는 배경색과 라벨 글자색이 동일해서 발생하는 문제이며, 라벨의 색을 변경해주어야 정상적으로 화면에 보이게됩니다.
+```js
+// 글자 색을 빨강으로 설정합니다.
+//   미리 정의되어 있는 색상들
+//     * RED, BLACK, WHITE, GREEN, BLUE, MAGENTA, CYAN
+label.setColor(cc.color.RED);
+
+// 또는 RGB값을 직접 지정합니다.
+label.setColor(cc.color(1,1,1));
+```
+__글자 변경하기__<br>
+이미 만들어진 라벨의 텍스트를 다시 변경해야 할 경우도 있습니다. (점수 라벨인데, 플레이어의 점수에 따라 계속 변경되어야 할 때)
+```js
+var score = 10;
+
+this.label.setString("Score : " + score);
+```
+<br>
+
 하이라키 시스템
 ----
 `cocos2d`는 하이라키(hierarchy) 시스템을 가지고 있습니다. 이는 대부분의 게임 엔진이 기본적으로 지원하는 항목이며 여러개의 연관성 있는 게임 오브젝트들을 하나로 묶어서 손쉽게 관리할 수 있도록 해 줍니다.<br>
@@ -260,36 +290,6 @@ __TODO__ : 위의 `sprite, child` 예제에서 위 속성들을 각각 변경시
 sprite.setCascadeOpacityEnabled(true);
 // 부모 노드의 색상이 자식 노드에게도 영향을 미치도록 합니다.
 sprite.setCascadeColorEnabled(true);
-```
-<br>
-
-폰트 출력하기
-----
-![font](font.png)<br>
-`cc.LabelTTF`를 이용하면 텍스트를 출력하는 라벨을 만들 수 있습니다.
-```js
-label = cc.LabelTTF.create("SomeText");
-label.setPosition(200, 200);
-this.addChild(label);
-```
-<br>
-__색상 변경하기__<br>
-라벨을 처음 만들면 경우에 따라 보이지 않는 경우가 있습니다. 이는 배경색과 라벨 글자색이 동일해서 발생하는 문제이며, 라벨의 색을 변경해주어야 정상적으로 화면에 보이게됩니다.
-```js
-// 글자 색을 빨강으로 설정합니다.
-//   미리 정의되어 있는 색상들
-//     * RED, BLACK, WHITE, GREEN, BLUE, MAGENTA, CYAN
-label.setColor(cc.color.RED);
-
-// 또는 RGB값을 직접 지정합니다.
-label.setColor(cc.color(1,1,1));
-```
-__글자 변경하기__<br>
-이미 만들어진 라벨의 텍스트를 다시 변경해야 할 경우도 있습니다. (점수 라벨인데, 플레이어의 점수에 따라 계속 변경되어야 할 때)
-```js
-var score = 10;
-
-this.label.setString("Score : " + score);
 ```
 <br>
 
