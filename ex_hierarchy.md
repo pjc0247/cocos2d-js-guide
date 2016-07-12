@@ -1,6 +1,8 @@
 ex_hierarchy
 ====
 ![ex_h](ex_hierarchy.gif)<br>
+이 예제는 `애니메이션` 과 `하이라키`를 사용한 예제입니다.<br>
+자식 노드로 편입하기만 하면, 부모 노드에게 적용한 `setPosition`과 `runAction`이 그대로 적용되는것을 보여줍니다.
 <br>
 ```js
 var MyScene = cc.Scene.extend({
