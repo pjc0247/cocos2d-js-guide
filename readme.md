@@ -284,3 +284,8 @@ var score = 10;
 
 this.label.setString("Score : " + score);
 ```
+<br>
+
+스케쥴러 사용하기
+----
+![batzul](batzul.png)<br>
