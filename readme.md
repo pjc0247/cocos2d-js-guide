@@ -356,3 +356,25 @@ this.schedule(function() {
 // 이전에 지정한 이름으로 스케쥴을 멈출 수 있습니다.
 this.unschedule("TASK_NAME_HERE");
 ```
+
+여러개의 .js 파일 사용하기
+----
+하나의 프로그램(여기서는 웹 페이지)에서 여러개의 `.js` 파일을 사용하는 방법에는 여러가지가 있지만, 여기서는 가장 간단하고 기초적인 방법만을 알아보도록 합니다.<br>
+HTML 파일에 `script` 태그를 사용하여 프로그램에 사용할 `.js` 파일을 나열할 수 있습니다. 이는 위에어 아래 순으로 순차적 로드되기 때문에 순서가 실제 동작에 영향을 미칩니다.
+```html
+<!-- 이렇게 작성하면 loading_scene.js를 불러옵니다. -->
+<script src="loading_scene.js"></script>
+<script src="game_scene.js"></script>
+
+<!-- 또는 이렇게 작성하여 html 내부에 직접 js 코드를 넣을 수 있습니다. -->
+<script>
+window.onload = function(){
+  cc.game.onStart = function(){
+    cc.LoaderScene.preload([], function () {                
+      cc.director.runScene(new LoadingScene());
+    }, this);
+  };
+  cc.game.run("gameCanvas");
+};
+</script>
+```
