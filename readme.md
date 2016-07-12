@@ -305,7 +305,7 @@ __딱 한번 스케쥴하기__
 // 3초 뒤에 실행시킵니다.
 this.scheduleOnce(function() {
   // 이 코드 블럭은 3초 뒤 실행됩니다.
-  console.log("Hello World");
+  console.log("빨리 선택해야 하는데!");
 }, 3);
 ```
 __반복적으로 스케쥴하기__<br>
@@ -313,7 +313,7 @@ __반복적으로 스케쥴하기__<br>
 ```js
 this.schedule(function() {
   // 이 코드 블럭은 3초 마다 실행됩니다.
-  console.log("Hello World");
+  console.log("이젠 뭘 할까");
 }, 3);
 ```
 __스케쥴한 작업 멈추기__
