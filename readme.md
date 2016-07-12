@@ -65,7 +65,7 @@ var sprite = cc.Sprite.create("HelloWorld.png");
 sprite.setPosition(200, 200);
 this.addChild(sprite, 0);
 ```
-그림이 정상적으로 표시되는걸 확인했다면 이번에는 `HelloWorld.png` 대신에 좋아하는 캐릭터 그림을 넣어서 실행해 보세요. 해당 그림은 `index.html`과 같은 폴더에 위치하여야 하며, 파일 이름은 대소문자를 구분합니다.
+그림이 정상적으로 표시되는걸 확인했다면 이번에는 `HelloWorld.png` 대신에 좋아하는 캐릭터 그림을 넣어서 실행해 보세요. 해당 그림은 `index.html`과 같은 폴더에 위치하여야 하며, 파일 이름은 대소문자를 구분합니다.<br>
 <br>
 __코코스의 좌표계__<br>
 코코스는 일반적인 윈도우의 좌표계와는 조금 다른 좌표 시스템을 사용합니다.<br>
@@ -81,6 +81,11 @@ sprite.setPosition(400, 200);
 // y 값을 증가시켰습니다.
 //   스프라이트는 기존보다 위로 이동합니다.
 sprite.setPosition(200, 400);
+```
+__이미지 지우기__<br>
+이미 추가한 이미지를 지우는 방법입니다. 
+```js
+sprite.removeFromParent();
 ```
 
 <br>
