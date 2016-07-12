@@ -8,9 +8,12 @@ cocos2d-js는 자바스크립트로 HTML5환경에서 동작하는 게임을 작
 * 자바스크립트는 보통 2개의 스페이스로 `indent`를 표기합니다.
 * 줄 끝에 세미콜론(`;`)은 강제 사항이 아니나, 보통 붙이는것이 일반적입니다.
 * 만약 코코스 화면이 뜨지 않고, 하얀 화면만 보인다면 작성한 자바스크립트에 문법 오류가 있는 경우입니다. 이 경우 개발자 도구(F12)를 눌러 콘솔을 확인해주세요.
+* `printf` 역할을 하는 함수는 `console.log()` 입니다. 이는 개발자 도구의 `console` 탭에서 보여집니다.
+* 만약 문자열과 숫자를 합치고 싶다면 단순히 `+` 기호를 사용합니다. (예 : `"PlayerName : " + name`)
 
 Scene
 ----
+![s](http://www.cocos2d-x.org/attachments/1591/scenes650x144.png)<br>
 보통의 게임 엔진들은 게임을 `Scene` 단위로 나누어서 관리합니다. 하나의 씬은 '로그인 화면', '로딩 화면', '실제 게임 화면' 등으로 예를 들 수 있으며, 이러한 씬들이 모여서 하나의 게임이 탄생합니다.<br>
 <br>
 `cocos2d` 역시 엔진 레벨에서 `Scene` 개념을 지원합니다. `cocos2d-js`의 베이스 코드에는 이미 기본 씬이 포함되어 있으며, 이 가이드에서는 해당 씬을 그대로 사용하도록 하겠습니다.<br>
@@ -223,3 +226,29 @@ sprite.setCascadeColorEnabled(true);
 
 폰트 출력하기
 ----
+![font](font.png)
+`cc.LabelTTF`를 이용하면 텍스트를 출력하는 라벨을 만들 수 있습니다.
+```js
+label = cc.LabelTTF.create("SomeText");
+label.setPosition(200, 200);
+this.addChild(label);
+```
+<br>
+__색상 변경하기__<br>
+라벨을 처음 만들면 경우에 따라 보이지 않는 경우가 있습니다. 이는 배경색과 라벨 글자색이 동일해서 발생하는 문제이며, 라벨의 색을 변경해주어야 정상적으로 화면에 보이게됩니다.
+```js
+// 글자 색을 빨강으로 설정합니다.
+//   미리 정의되어 있는 색상들
+//     * RED, BLACK, WHITE, GREEN, BLUE, MAGENTA, CYAN
+label.setColor(cc.color.RED);
+
+// 또는 RGB값을 직접 지정합니다.
+label.setColor(cc.color(1,1,1));
+```
+__글자 변경하기__<br>
+이미 만들어진 라벨의 텍스트를 다시 변경해야 할 경우도 있습니다. (점수 라벨인데, 플레이어의 점수에 따라 계속 변경되어야 할 때)
+```js
+var score = 10;
+
+this.label.setString("Score : " + score);
+```
