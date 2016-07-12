@@ -305,6 +305,8 @@ sprite.setCascadeOpacityEnabled(true);
 sprite.setCascadeColorEnabled(true);
 ```
 <br>
+__예제__ : [하이라키](ex_hierarchy.md)<br>
+<br>
 
 스케쥴러 사용하기
 ----
